@@ -39,9 +39,25 @@ relicoef <- function(mod){
   errvar=unlist(ll)
   corrErr=unlist(ll2)
 
-  RRC=(sumlambdasq*factorvar)/(sumlambdasq*factorvar+errvar+2*corrErr)
+  RRC=(sumlambdasq*factorvar)/((sumlambdasq*factorvar)+errvar)
   data.frame(
     Latent=names(RRC),
     RRC=as.vector(RRC)
   )
 }
+
+
+meas.lpa.mod <- '
+Attractive =~ face + sexy
+Appearance =~ body + appear + attract
+Muscle =~ muscle + strength + endur
+Weight =~ lweight + calories + cweight
+'
+
+library(haven)
+workout2 <- read_dta("workout2.dta")
+
+est.meas.lpa.mod <- cfa(meas.lpa.mod, data=workout2)
+summary(est.meas.lpa.mod, fit.measures=TRUE, standardized=TRUE)
+
+relicoef(est.meas.lpa.mod)
