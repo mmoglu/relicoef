@@ -1,0 +1,10 @@
+v 1.0.0
+d 'RELICOEF': Reliability coefficient
+d 
+d Stata module to compute Raykov’s factor reliability coefficient
+d 
+d Distribution-Date:   20211124
+d License: MIT
+d 
+F relicoef.ado
+F relicoef.sthlp
