@@ -41,7 +41,7 @@ KW: scale
 
 {title:Examples}
 
-{phang}{stata "use http://stats.idre.ucla.edu/stat/stata/output/m255, clear": . use http://stats.idre.ucla.edu/stat/stata/output/m255, clear}{p_end}
+{phang}{stata "use https://stats.idre.ucla.edu/stat/stata/output/m255, clear": . use https://stats.idre.ucla.edu/stat/stata/output/m255, clear}{p_end}
 {phang}{stata "keep item13 item14 item15 item25 item32": . keep item13 item14 item15 item25 item32}{p_end}
 {phang}{stata "qui sem (Factor1 ->  item13 item14 item15) (Factor2 -> item25 item32)": . qui sem (Factor1 ->  item13 item14 item15) (Factor2 -> item25 item32)}{p_end}
 {phang}{stata "relicoef": . relicoef}{p_end}
